@@ -4,7 +4,6 @@
 //ifndef serve per eseguire chip8.h SOLO se non è ancora definito
 #ifndef CHIP8_H
 #define CHIP8_H
-
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -35,12 +34,12 @@ typedef struct {
     uint8_t sound_timer;
 
     bool display[DISPLAY_X * DISPLAY_Y];
-    bool drawing_flag;
+    bool flag;
 
 }Chip8;
 
-void chip8_init(Chip8* chip8);
-bool chip8_load_rom(Chip8* chip8, char* filename);
-void chip8_cycle(Chip8* chip8); //definisce il ciclo della CPU
+void chip8Init(Chip8* chip8);
+bool chip8Rom(Chip8* chip8, char* filename);
+void chip8Cycle(Chip8* chip8); //definisce il ciclo della CPU
 
 #endif
